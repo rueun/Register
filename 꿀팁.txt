@@ -1,0 +1,8 @@
+git branch -> 브랜치 확인
+
+git branch -d 브랜치 이름 -> 브랜치 삭제
+
+git checkout -b 브랜치 이름 -> 브랜치 생성
+
+git checkout 브랜치이름 -> 브랜치 이동
+
