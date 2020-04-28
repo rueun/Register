@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success) { //로그인에 성공한 경우
+
                                 String userID = jsonObject.getString("userID");
                                 String userPass = jsonObject.getString("userPassword"); //php파일에 userPassword로 되어있음
 
