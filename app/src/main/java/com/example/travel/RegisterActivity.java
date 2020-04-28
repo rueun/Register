@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText et_id, et_pass, et_name, et_age;
+    private EditText et_id, et_pass, et_name, et_age, et_email, et_ph;
     private Button btn_register;
 
     @Override
@@ -30,6 +30,8 @@ public class RegisterActivity extends AppCompatActivity {
         et_pass = findViewById(R.id.et_pass);
         et_name = findViewById(R.id.et_name);
         et_age = findViewById(R.id.et_age);
+        et_email = findViewById(R.id.et_email);
+        et_ph = findViewById(R.id.et_ph);
         btn_register = findViewById(R.id.btn_register);
 
         //회원가입 버튼 클릭 시 수행
@@ -41,11 +43,14 @@ public class RegisterActivity extends AppCompatActivity {
                 String userPass = et_pass.getText().toString();
                 String userName = et_name.getText().toString();
                 int userAge = Integer.parseInt(et_age.getText().toString());
+                String userEmail = et_email.getText().toString();
+                String userPH = et_ph.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
+
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success) { //회원등록에 성공한 경우
@@ -66,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 };
                 // 서버로 Volley를 이용해서 요청을 함.
-                RegisterRequest registerRequest = new RegisterRequest(userID, userPass, userName, userAge, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(userID, userPass, userName, userAge, userEmail, userPH, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
             }
