@@ -75,10 +75,15 @@
         android:id="@+id/btn_register"
         android:layout_width="213dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="회원가입"
-        app:layout_constraintTop_toBottomOf="@+id/et_ph"
-        tools:layout_editor_absoluteX="99dp" />
+        app:layout_constraintEnd_toEndOf="@+id/et_ph"
+        app:layout_constraintStart_toStartOf="@+id/et_ph"
+        app:layout_constraintTop_toBottomOf="@+id/et_ph" />
 
     <EditText
         android:id="@+id/et_email"
